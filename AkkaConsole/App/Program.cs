@@ -30,6 +30,8 @@ namespace App
 
         private static void ConfigureServicesHandler(IConfiguration configuration, IServiceCollection services)
         {
+            services.AddSingleton<IGreetService, GreetService>();
+
             services.AddHostedService<AkkaSystem>(sp => new AkkaSystem(sp));
         }
     }
